@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Random Background Color</title>
+
+        <style>
+
+            body {
+                background-color: lightgreen;
+            }
+
+            #button_container {
+                width: 180px;
+                margin: 125px auto;
+            }
+
+            #button {
+                font-size: 1.8em;
+                text-align: center;
+                padding: 20px 30px;
+                background-color: #c6c3fc;
+                text-decoration: none;
+                box-shadow: 1px 1px 4px 3px;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="button_container">
+            <a href="#" id="button">Click Me</a>
+        </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.js"></script>
+        <script type="text/javascript">
+
+            $(function (){
+
+                var button = $('#button_container');
+
+
+                button.on('click', function (e) {
+
+                    e.preventDefault();
+                    getRandomColor();
+
+                });
+
+                function getRandomColor() {
+
+                    var letters = '0123456789ABCDEF'.split('');
+                    var color = '#';
+                    for (var i = 0; i < 6; i++) {
+                        color += letters[Math.floor(Math.random() * letters.length)];
+                    }
+                    console.log(color);
+                    $('body').css('background-color', color);
+
+                }
+
+            });
+
+        </script>
+    </body>
+</html>
