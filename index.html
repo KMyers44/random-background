@@ -41,24 +41,19 @@
 
                 var button = $('#button_container');
 
-
                 button.on('click', function (e) {
-
                     e.preventDefault();
                     getRandomColor();
-
                 });
 
                 function getRandomColor() {
-
                     var letters = '0123456789ABCDEF'.split('');
                     var color = '#';
                     for (var i = 0; i < 6; i++) {
                         color += letters[Math.floor(Math.random() * letters.length)];
                     }
-                    console.log(color);
-                    $('body').css('background-color', color);
 
+                    $('body').css('background-color', color);
                 }
 
             });
